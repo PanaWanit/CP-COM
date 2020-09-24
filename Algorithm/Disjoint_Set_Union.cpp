@@ -16,8 +16,8 @@ int find_root(int i){
 	 *	    0
 	 *	    |
 	 *	    1
-	 *     / \
-	 *    2   3
+	 *	   / \
+	 *	  2   3
 	 *    p[0] = 0 , p[1] = 0 , p[2] = 1 , p[3] = 1
 	 *    call function find_root(2):
 	 *    -> p[2] != 2
