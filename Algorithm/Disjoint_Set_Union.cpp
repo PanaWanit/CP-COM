@@ -13,10 +13,10 @@ int find_root(int i){
 	return p[i] = find_root(p[i]); // compress path
 	/*	checking + compress path
 	 *	Ex. Graph
-	 *		0
+	 *	    0
 	 *	    |
-	 *		1
-	 *	   / \
+	 *	    1
+	 *     / \
 	 *    2   3
 	 *    p[0] = 0 , p[1] = 0 , p[2] = 1 , p[3] = 1
 	 *    call function find_root(2):
@@ -31,11 +31,11 @@ int find_root(int i){
 	 *    -> p[0] == 0
 	 *    -> return 0
 	 *
-	 *	  ->p[1] = 0; ( return 0 to find_root(p[2])
-	 *	  ->p[2] = 0;
+	 *    ->p[1] = 0; ( return 0 to find_root(p[2])
+	 *    ->p[2] = 0;
 	 *	  
 	 *	  Graph after find_root(2) :
-	 *	  	 0
+	 *       0
 	 *	    / \
 	 *	   1   2
 	 *	  /
@@ -58,7 +58,7 @@ int find_root(int i){
 	 *	 ->p[1] = 0 , p[3] = 0
 	 *
 	 *	 Graph after find_root(3):
-	 *	 	0
+	 *      0
 	 *     /|\
 	 *    1 2 3
 	 *    p[0] = 0 , p[1] = 0 , p[2] = 0 , p[3] = 0
@@ -76,13 +76,13 @@ int find_root(int i){
 	 *    parent of 0 is 4 (Union) 
 	 *
 	 *	Graph after set parent :
-	 *		4
-	 *		|
-	 *		0
+	 *      4
+	 *      |
+	 *	    0
 	 *	  / | \
 	 *	 1  2  3
 	 *	Graph after call function find_root of (0,1,2,3):
-	 *		4
+	 *	    4
 	 *	  / | \ \
 	 *	 0  1  2 3
 	 *
