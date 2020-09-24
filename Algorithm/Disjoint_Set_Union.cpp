@@ -58,9 +58,9 @@ int find_root(int i){
 	 *	 ->p[1] = 0 , p[3] = 0
 	 *
 	 *	 Graph after find_root(3):
-	 *		 0
-	 *	    /|\
-	 *	   1 2 3
+	 *		    0
+	 *		   /|\
+	 *		  1 2 3
 	 *    p[0] = 0 , p[1] = 0 , p[2] = 0 , p[3] = 0
 	 *
 	 * 	  same parent == same set
