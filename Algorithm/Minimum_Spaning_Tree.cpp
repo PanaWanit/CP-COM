@@ -1,7 +1,7 @@
 /*
 	Task: Minimum Spanning Tree
 	Author: Pana Wanit
-    Lang: C++17
+	Lang: C++17
 	School: N/a
  */
 #include<bits/stdc++.h>
