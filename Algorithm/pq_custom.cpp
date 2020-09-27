@@ -2,7 +2,7 @@
 	Task: pq pair custom comparator
 	Author: Pana Wanit
 	Lang: C++
-	School: RYW
+	School: N/a
 */
 #include<bits/stdc++.h>
 using namespace std;
