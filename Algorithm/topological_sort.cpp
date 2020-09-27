@@ -21,7 +21,7 @@ int main(){
 		++in[v];
 	}
 	for(int i=0; i<node; i++) {
-		if(in[i] == 0) pq.push(i); // find nodes that have no parent
+		if(in[i] == 0) pq.push(i); // push no parent node
 	}	
 	while(!pq.empty()) {
 		int n = pq.top();
