@@ -16,7 +16,7 @@ void dfs(int i, int j){
 	for(int k=0; k<8; k++){
 		int ii = i + di[k] , jj = j + dj[k];
 		if(ii >= n || jj >=m || ii <0 || jj < 0) continue;
-		a[ii][jj] *= 1.1;
+		a[ii][jj] += a[i][j]/10;
 	}
 	bool ch=0;
 	for(int i=0; i<n; i++){
@@ -30,7 +30,7 @@ void dfs(int i, int j){
 	for(int k=0; k<8; k++){
 		int ii = i + di[k] , jj = j + dj[k];
 		if(ii >= n || jj >=m || ii <0 || jj <0) continue;
-		a[ii][jj] /= 1.1;
+		a[ii][jj] -= a[i][j]/10;
 	}
 }
 int main(){
