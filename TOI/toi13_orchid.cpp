@@ -12,10 +12,9 @@ int main(){
    for(int i=0;i<n;i++)
       cin >> a[i];
    for(int i=0;i<n;i++){
-      vector<int>::iterator idx = upper_bound(b.begin(),b.end(),a[i]);
-      int p = idx - b.begin();
-      if(idx == b.end()) b.push_back(a[i]);
-      else b[p] = a[i]; 
+      auto it= upper_bound(b.begin(),b.end(),a[i]);
+      if(it == b.end()) b.push_back(a[i]);
+      else *it = a[i]; 
    }
    cout << n - b.size() << "\n";
    return 0;
