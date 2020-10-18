@@ -1,0 +1,44 @@
+/*
+	Task: Thaco_Robot Line Up
+	Author: Pana Wanit
+	Lang: C++
+	School: RYW
+*/
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+typedef pair<int,int> pii;
+typedef pair<int,pii> pip;
+#define vt vector
+#define pb push_back
+#define eb emplace_back
+#define sz(x) (int)(x).size()
+#define _lb lower_bound
+#define _ub upper_bound
+#define all(x) (x).begin(),(x).end()
+#define FOE(x,a) for(auto& x : a)
+#define POR(a) for(auto it = (a).begin(); it != (a).end(); it++)
+#define ROP(a) for(auto it = (a).rbegin(); it != (a).rend(); it++)
+void DBG() {cerr << "]" << endl;}
+template<class A,class... T> void DBG(A x,T... t) {	cerr << x; if(sizeof...(t)) cerr << ","; DBG(t...);}
+#define dbg(...) cerr << "[" << #__VA_ARGS__ << "]:[",DBG(__VA_ARGS__)
+const int mxN = 2e5+2;
+int dpl[mxN] , dpr[mxN] , a[mxN] , b[mxN];
+int main() {
+	ios::sync_with_stdio(0),cin.tie(0);
+	int n,m;
+	cin >> n >> m;
+	for(int i=1; i<=n; i++) cin >> a[i];
+	for(int i=1; i<=m; i++) cin >> b[i];
+	sort(a+1,a+1+n) , sort(b+1,b+1+m);
+	for(int i=1; i<=m; i++){
+		dpl[i] = dpl[i-1] + n - (_lb(a+1,a+1+n,b[i]) - a) + 1;
+	}
+	for(int i=m; i>=1; i--) {
+		dpr[i] = dpr[i+1] + (_lb(a+1,a+1+n,b[i])-a) -1;
+	}
+	int mx = -1;
+	for(int i=0; i<=m; i++) mx = max(mx,dpl[i] + dpr[i+1]);
+	cout << mx + m*(m-1)/2 << "\n";
+	return 0;
+}
