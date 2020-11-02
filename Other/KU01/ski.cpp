@@ -10,12 +10,12 @@ int l,m;
 void solve(){
 	bool ch=0;
 	int now = l;
-	for(int i=l*2;i--;){
+	for(int i=m;i--;){
 		bool opr;
 		cin >> opr;
 		if(opr == 0) now--;
 		else now++;
-		if(now > 2*l || now <= 0) ch=1;
+		if(now > 2*l || now < 0) ch=1;
 	}
 	cout << (ch?0:1) << "\n";
 }
