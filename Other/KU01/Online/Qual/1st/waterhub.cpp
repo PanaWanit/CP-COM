@@ -55,10 +55,10 @@ using gtpp = gt<pip>;
 
 #define FOE(x,a) for(auto& x : a)
 // MAX MIN COMPARE
-template<class A> bool umin(A& a, A& b) { // set min to x
+template<class A> bool umin(A& a,const A& b) { // set min to x
 	return a > b?a=b,1:0;
 }
-template<class A> bool umax(A& a, A& b) { // set max to x
+template<class A> bool umax(A& a,const A& b) { // set max to x
 	return a < b?a=b,1:0;
 }
 //INPUT
@@ -126,9 +126,22 @@ template<class A, class... T> void DBG(A x, T... t) {
 #else
 #define dbg(...)0
 #endif
-
+pii a[100];
 int main() {
 	ios::sync_with_stdio(false),cin.tie(nullptr);
-
+	int n,mn=2e9;
+	read(n);
+	for(int i=0; i<n; i++) read(a[i]);
+	for(int i=0; i<n; i++) {
+		for(int j=i+1; j<n; j++) {
+			int sum=0;
+			for(int k=0; k<n; k++) {
+				if(k == i || k == j) continue;
+				sum += min(abs(a[i].first - a[k].first) + abs(a[i].second - a[k].second) , abs(a[j].first - a[k].first) + abs(a[j].second - a[k].second));
+			}
+			umin(mn,sum);
+		}
+	}
+	pn(mn);
 	return 0;
 }
