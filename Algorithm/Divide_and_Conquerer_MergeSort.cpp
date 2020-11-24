@@ -6,7 +6,6 @@
  */
 #include<bits/stdc++.h>
 using namespace std;
-//Divide and Conquerer alway NlogN time
 const int mxN = 1e5;
 int n,mem[mxN]; //for mem 
 void merge_sort(int arr[], int l , int r) {
