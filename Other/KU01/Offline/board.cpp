@@ -25,7 +25,6 @@ int main(){
 			a[i][j] = max(a[i][j],a[i-1][j]);
 		}
 	}
-
 	cout << ans << "\n";
 	return 0;
 }

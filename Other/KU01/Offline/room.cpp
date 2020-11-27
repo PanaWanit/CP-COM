@@ -1,24 +1,23 @@
 /*
 	Task: Final Room
 	Author: Pana Wanit
-	Lang: C++17
+	Lang: C++
 	School: RYW
 */
 #include<bits/stdc++.h>
 using namespace std;
-typedef pair<int,int> pii;
-#define vt vector
-#define eb emplace_back
 const int mxN = 30 , di[] = {1,-1,0,0} , dj[] = {0,0,1,-1};
 int n,m,cnt=0;
-vt<pii> w;
+struct A {int i, j;};
+vector<A> w;
 char a[mxN][mxN];
 bool mark[mxN][mxN];
 void dfs(int i,int j){
 	mark[i][j] = 1;
 	if(a[i][j] == '*') cnt++;
 	if(a[i][j] == 'W'){
-		for(auto& [ii,jj]: w){ //only -std=c++17
+		for(auto x: w){ 
+			int ii = x.i, jj = x.j;
 			if(!mark[ii][jj]) dfs(ii,jj);
 		}
 	}
@@ -36,7 +35,7 @@ int main(){
 		for(int j=0; j<m; j++){
 			cin >> a[i][j];
 			if(a[i][j] == 'A') si=i,sj=j;
-			if(a[i][j] == 'W') w.eb(i,j);
+			if(a[i][j] == 'W') w.push_back({i,j});
 		}
 	}
 	dfs(si,sj);
