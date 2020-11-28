@@ -1,3 +1,8 @@
+/*
+	TASK : KU01-1st-bird
+	AUTHOR : Pana Wanit
+	LANG : C++
+*/
 #include<bits/stdc++.h>
 using namespace std;
 int a[1000];
