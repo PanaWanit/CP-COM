@@ -6,11 +6,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-using ll = long long;
-#define ar array
 #define vt vector
 #define FOE(x, a) for(auto& x: a)
-const int mxN = 1e4+1;
 int main() {
 	ios::sync_with_stdio(false), cin.tie(nullptr);
 	int w,h,m,n;
