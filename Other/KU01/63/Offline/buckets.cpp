@@ -17,10 +17,10 @@ void tree(int u, int lv) {
 	}
 }
 void dfs(int u, bool ch=0) {
-    for(auto& x : adj[u]) {
-        if(num[x] == num[u]) ch=1, dfs(x);
-    }
-    if(!ch) ans[u]=1,cnt++;
+	for(auto& x : adj[u]) {
+		if(num[x] == num[u]) ch=1, dfs(x);
+	}
+	if(!ch) ans[u]=1,cnt++;
 }
 int main() {
 	ios::sync_with_stdio(false), cin.tie(0);
