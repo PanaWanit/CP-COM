@@ -1,20 +1,17 @@
 #include<bits/stdc++.h>
 using namespace std;
-using ll = long long;
-#define ar array
-#define vt vector
-#define FOE(x, a) for(auto& x: a)
+
 const int mxTime = 2e5+10;
 struct Heap_Struct {
-	int now_time, type, w, v, time_change, change;
+	int mk, type, w, v; //mk time_stamp
 	bool operator < (const Heap_Struct& o) const {
 		return w > o.w;
 	}
 };
 struct Heap_time {
-	int now_time, time, change,v; // now_time use for mark, change == 0 -> type = 2
+	int mk, time, change,v; // mk time_stamp, change == 0 -> type = 2
 	bool operator < (const Heap_time& o) const {
-		return time > o.time || (time==o.time && change>o.change);
+		return time > o.time;
 	}
 };
 priority_queue<Heap_Struct> pq;
@@ -29,32 +26,33 @@ int main() {
 		if(opr == 1) {
 			int type, w, v, time, change=0;
 			cin >> type >> w >> v;
-			if(type == 1) {
-				pq.push({now_time, type, w, v, mxTime, 0});
-			}
+			pq.push({now_time, type, w, v});
 			if(type >= 2) {
 				cin >> time;
-			    if(type == 3) cin >> change;
-				pq.push({now_time, type, w, v, time, change});
+				if(type == 3) cin >> change;
 				time_cmp.push({now_time, time, change,v});
 			}
 		}
 		if(opr == 2) {
 			bool ch=0;
 			while(!pq.empty()) {
-				if(pq.top().type >= 2 && mark[pq.top().now_time]) pq.pop(); // used pop out
+				auto now = pq.top();
+				if(now.type >= 2 && mark[now.mk]) pq.pop(); // used pop out
 				else {
-					cout << pq.top().v << "\n";
-					pq.pop();
 					ch=1;
+					mark[now.mk]=1;
+					pq.pop();
+					cout << now.v << "\n";
 					break;
 				}
 			}
 			if(!ch) cout << 0 << "\n";
 		}
-		while(!time_cmp.empty() &&  now_time >= time_cmp.top().time){ // type 2,3 time_out
-			mark[time_cmp.top().now_time]=1;
-			if(time_cmp.top().change > 0) pq.push({mxTime,1,time_cmp.top().change,time_cmp.top().v,mxTime,0});//type 3
+		while(!time_cmp.empty()) { // type 2,3 time_out
+			auto top = time_cmp.top();
+			if(now_time<top.time) break;
+			if(top.change!=0&&!mark[top.mk]) pq.push({0, 1, top.change, top.v}); //type3
+			mark[top.mk]=1;
 		   	time_cmp.pop();
 		}
 	}

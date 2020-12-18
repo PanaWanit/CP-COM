@@ -34,6 +34,10 @@ void solve() {
 			qu.emplace(ii, jj);
 		}
 	}
+	if(d[e.first][e.second] == -1) {
+		cout << -1 << "\n";
+		return;
+	}
 	int ans=0;
 	FOE(x, numpos) {
 		if(d[x.second.first][x.second.second] <= d[e.first][e.second]) ans += x.first;
