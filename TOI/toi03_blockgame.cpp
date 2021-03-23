@@ -1,10 +1,3 @@
-/*
-  TASK: toi3_blockgame
-  AUTHOR: pnawn_
-  LANG: C++14
-  SCHOOL: N/a
-  EDITOR: Gvim
-*/
 #include<bits/stdc++.h>
 using namespace std;
 char a[5][5];

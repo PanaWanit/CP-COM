@@ -6,14 +6,6 @@
  */
 #include<bits/stdc++.h>
 using namespace std;
-typedef long long ll;
-typedef pair<int,int> pii;
-typedef pair<int,pii> pip;
-#define fp first
-#define sp second
-#define pb push_back
-#define eb emplace_back
-#define all(x) (x).begin(),(x).end()
 bool dp[101];
 int nugget[] = {6,9,20};
 int main(){

@@ -6,14 +6,6 @@
  */
 #include<bits/stdc++.h>
 using namespace std;
-typedef long long ll;
-typedef pair<int,int> pii;
-typedef pair<int,pii> pip;
-#define fp first
-#define sp second
-#define pb push_back
-#define eb emplace_back
-#define all(x) (x).begin(),(x).end()
 bool isPrime(int n){
 	if(n==1) return 0;
 	if(n==2) return 1;

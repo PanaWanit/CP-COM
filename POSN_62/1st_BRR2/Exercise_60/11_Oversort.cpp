@@ -6,14 +6,6 @@
  */
 #include<bits/stdc++.h>
 using namespace std;
-typedef long long ll;
-typedef pair<int,int> pii;
-typedef pair<int,pii> pip;
-#define fp first
-#define sp second
-#define pb push_back
-#define eb emplace_back
-#define all(x) (x).begin(),(x).end()
 const int mxN = 1e5;
 double d[mxN];
 char c[mxN];

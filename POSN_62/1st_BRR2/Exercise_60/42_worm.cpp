@@ -9,7 +9,7 @@ using namespace std;
 const int mxN = 1e5+1;
 pair<double, double> a[mxN];
 int main(){
-	ios::sync_with_stdio(0),cin.tie(0);
+	ios::sync_with_stdio(0), cin.tie(0);
 	int n;
 	cin >> n;
 	for(int i=0; i<n; i++)

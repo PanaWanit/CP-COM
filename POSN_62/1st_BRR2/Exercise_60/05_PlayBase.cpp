@@ -6,14 +6,6 @@
  */
 #include<bits/stdc++.h>
 using namespace std;
-typedef long long ll;
-typedef pair<int,int> pii;
-typedef pair<int,pii> pip;
-#define fp first
-#define sp second
-#define pb push_back
-#define eb emplace_back
-#define all(x) (x).begin(),(x).end()
 int base;
 int change(string& a){
 	int sum=0;

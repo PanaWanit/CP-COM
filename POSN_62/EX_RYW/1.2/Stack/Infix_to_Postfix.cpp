@@ -15,7 +15,7 @@ int main() {
 		if(isdigit(c)) {
 			 cout << input << " "; 
 		}
-		else if(c=='(' || st.empty()) {
+		else if(c=='(' || c=='^' || st.empty()) {
 			st.push(c);
 		}
 		else if(c == ')') {

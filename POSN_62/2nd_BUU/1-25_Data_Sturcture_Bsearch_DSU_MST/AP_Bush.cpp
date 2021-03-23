@@ -1,10 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
-using ll = unsigned long long;
-#define ar array
-#define vt vector
-#define FOE(x, a) for(auto& x: a)
-int a[1001];
+using ll = long long;
+ll a[1001];
 void solve() {
 	int n;
 	ll k;
@@ -20,7 +17,7 @@ void solve() {
 		for(int i=1; i<n; i++) {
 			ll dif = a[i]-a[i-1]-1;
 			now += (mb+1)*(mb+1);
-			int sz = mb-dif/2;
+			ll sz = max(0, mb-dif/2);
 			now -= sz*(sz+1-dif%2);
 		}
 		if(now >= k) rb=mb;
@@ -30,8 +27,8 @@ void solve() {
 }
 int main() {
 	ios::sync_with_stdio(false), cin.tie(nullptr);
-	int q;
-	cin >> q;
+	int q=1;
+	//cin >> q;
 	while(q--)
 		solve();
 	return 0;

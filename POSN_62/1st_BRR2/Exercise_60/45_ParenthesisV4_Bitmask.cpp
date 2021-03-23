@@ -6,10 +6,11 @@
  */
 #include<bits/stdc++.h>
 using namespace std;
-int ans[100000];
+#define sz(x) (int)(x).size()
+vector<int> ans;
 int main(){
 	ios::sync_with_stdio(0),cin.tie(0);
-	int n,cnt=0,base;
+	int n,base;
 	cin >> n;
 	base = n*2-1; 
 	// (1<<n)-1 -> start (((...()...))) 000...0011...111
@@ -23,10 +24,10 @@ int main(){
 			zero -= now_bit==1;
 			if(zero<0) break;
 		}
-		if(zero==0) ans[cnt++]=i;
+		if(zero==0) ans.push_back(i);
 	}
-	cout << cnt << "\n";
-	for(int i=0; i<cnt; i++) {
+	cout << sz(ans) << "\n";
+	for(int i=0; i<sz(ans); i++) {
 		for(int j=base; j>=0; j--)
 			if((1<<j)&(ans[i])) cout << ")";
 			else cout << "(";

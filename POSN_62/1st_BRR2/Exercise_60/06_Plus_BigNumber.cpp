@@ -6,14 +6,6 @@
  */
 #include<bits/stdc++.h>
 using namespace std;
-typedef long long ll;
-typedef pair<int,int> pii;
-typedef pair<int,pii> pip;
-#define fp first
-#define sp second
-#define pb push_back
-#define eb emplace_back
-#define all(x) (x).begin(),(x).end()
 void add(string& a, string& b){
 	string c;
 	int A = (int)a.size()-1 , B = (int)b.size()-1,tod=0;
