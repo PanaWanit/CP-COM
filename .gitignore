@@ -5,6 +5,7 @@
 /HiwKao
 /Web_Program
 *.ini
+*.out
 *.exe
 *.d
 *.sol
