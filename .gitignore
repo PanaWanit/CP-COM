@@ -9,7 +9,6 @@ Ctemplate.c
 *.out
 *.exe
 *.d
-*.sol
 *.slo
 *.lo
 *.o
