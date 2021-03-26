@@ -23,10 +23,14 @@ void solve() {
 		}
 		else printf("More\n");
 	}
-	else {
+	else if(d!=0){
 		if(d==a[2]+b[2]) printf("One\n");
 		else if(d>a[2]+b[2]) printf("None\n");
 		else printf("More\n");
+	}
+	else  {
+		if(a[2]==b[2]) printf("More\n");
+		else printf("None\n");
 	}
 }
 int main() {
