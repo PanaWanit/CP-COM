@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>
+using namespace std;
+const int mxN = 1e5+10;
+struct A {
+	int s,v;
+	bool operator < (const A&o) const {
+		if(s!=o.s) return s>o.s;
+		return v>o.v;
+	}
+} a[mxN];
+void solve() {
+	int n,t;
+	cin >> n >> t;
+	for(int i=0; i<n; ++i) 
+		cin >> a[i].s >> a[i].v;
+	sort(a, a+n);
+	int p=0,ans=n;
+	for(int i=0; i<n; ++i) {
+		if(a[i].v<=a[p].v) { // a[p].s >= a[i].s cause sorting
+			--ans;
+			continue;
+		}
+		int Sdiff = a[p].s-a[i].s;
+		int Vdiff = abs(a[i].v-a[p].v);
+		if(Vdiff*t >= Sdiff) --ans;
+	}
+	cout << ans << "\n";
+}
+int main() {
+	ios::sync_with_stdio(false), cin.tie(nullptr);
+	int t;
+	cin >> t;
+	while(t--)
+		solve();
+	return 0;
+}
+
