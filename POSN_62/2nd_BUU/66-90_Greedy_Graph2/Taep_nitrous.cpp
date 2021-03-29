@@ -7,6 +7,7 @@ const int mxN = 5e3+1;
 int d[101][mxN];
 vt<pair<int,int>> adj[mxN];
 priority_queue<pair<int,ar<int,2>>, vt<pair<int,ar<int,2>>>, greater<pair<int,ar<int,2>>>> pq;
+
 int main() {
 	ios::sync_with_stdio(false), cin.tie(nullptr);
 	int n,m,t;
