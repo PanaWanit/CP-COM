@@ -1,8 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
-using ll = long long;
-using db = double;
 const int mxN = 12;
+
 int a[mxN], b[mxN];
 int main() {
 	ios::sync_with_stdio(false), cin.tie(nullptr);

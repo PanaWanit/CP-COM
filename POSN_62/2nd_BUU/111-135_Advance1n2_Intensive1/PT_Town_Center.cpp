@@ -1,12 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
-
-using ll = long long;
-#define ar array
 #define vt vector
-#define FOE(x, a) for(auto& x: a)
-using pp = pair<int,pair<int,int>>;
-const int mxN = 1001;
+using pi = pair<int,int>;
+using pp = pair<int, pi>;
+const int mxN=2e5;
 int cnt[mxN], p[mxN];
 int fr(int i) {
 	if(p[i] == i) return i;
@@ -46,6 +43,7 @@ void solve() {
 int main() {
 	ios::sync_with_stdio(false), cin.tie(nullptr);
 	int t;
-	for(cin >> t; t--;) solve();
+	for(cin >> t; t--;)
+		solve();
 	return 0;
 }

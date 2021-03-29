@@ -1,8 +1,5 @@
 #include<bits/stdc++.h>
 using namespace std;
-
-using ll = long long;
-#define ar array
 #define vt vector
 const int mxN = 1e5+1;
 vt<int> adj[mxN];
@@ -41,6 +38,7 @@ void solve() {
 int main() {
 	ios::sync_with_stdio(false), cin.tie(nullptr);
 	int t;
-	for(cin >> t; t--;) solve();
+	for(cin >> t; t--;)
+		solve();
 	return 0;
 }

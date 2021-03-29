@@ -1,10 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-using ll = long long;
-#define ar array
-#define vt vector
-#define FOE(x, a) for(auto& x: a)
 const int mxN = 500;
 bool dp[mxN][mxN];
 int main() {
