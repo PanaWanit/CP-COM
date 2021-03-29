@@ -1,57 +1,23 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-using ll = long long;
-using db = double;
-#define vt vector
-#define ar array
-
-#define TA template<class A> void
-#define TC template<class A, class... T> void
-#define CA const A& x, const T& ...t
-
-#define FOE(x, a) for(auto& x: a)
-#define FOR_R(i, s, e, p) for(int i=(s); (p)>0?i<(e):i>=(e); i+=(p))
-#define FOR1(e) FOR_R(i, 0, e, 1)
-#define FOR2(i, e) FOR_R(i, 0, e, 1)
-#define FOR3(i, s, e) FOR_R(i, s, e, 1)
-#define FOR4(i, s, e, p) FOR_R(i, s, e, p)
-#define ALL5(a, b, c, d, e, ...) e
-#define SEL_FOR(...) ALL5(__VA_ARGS__, FOR4, FOR3, FOR2, FOR1)
-#define FOR(...) SEL_FOR(__VA_ARGS__)(__VA_ARGS__)
-
-template<class A> bool umax(A& x, const A& y) {return x<y?x=y,1:0;} 
-template<class A> bool umin(A& x, const A& y) {return x>y?x=y,1:0;}
-TA read(vt<A>& v); 
-template<class A, size_t SZ>
-void read(ar<A,SZ>& a); 
-TA read(A& x) {cin >> x;} 
-TC read(A& x, T& ...t) {read(x); read(t...);} 
-template<class A, size_t SZ> void read(ar<A, SZ>& a) {FOE(x, a) read(x);}
-TA read(vt<A>& v) {FOE(x, v) read(x);}
-TA write(const A& x) {cout << x;} 
-TC write(CA) {write(x);write(t...);} 
-void print() {write("\n");} TC print(CA) {write(x); if(sizeof ...(t)) write(" "); print(t...);}
-void DBG() {cerr << "]" << endl;} TC DBG(A x, T ...t) {cerr << x; if(sizeof ...(t)) cerr << ", " ; DBG(t...);}
-#define dbg(...) cerr << "[" << #__VA_ARGS__ << "]: [", DBG(__VA_ARGS__)
-
 const int mxN = 5e4;
-priority_queue<int, vt<int>, greater<int>> pq;
-vt<int> adj[mxN];
+priority_queue<int, vector<int>, greater<int>> pq;
+vector<int> adj[mxN];
 int in[mxN];
 void solve() {
 	int n,m;
-	read(n, m);
-	FOR(m) {
+	cin >> n >> m;
+	for(int i=0; i<m; i++) {
 		int u,v;
-		read(v, u);
+		cin >> v >> u;
 		--u, --v;
 		adj[u].push_back(v);
 		++in[v];
 	}
-	FOR(n)
+	for(int i=0; i<n; i++)
 		if(!in[i]) pq.push(i);
-	vt<int> ans;
+	vector<int> ans;
 	bool ch=0;
 	while(!pq.empty()) {
 		if(pq.size()>=2&&ch==0) {
@@ -62,7 +28,7 @@ void solve() {
 			pq.pop();
 			pq.push(first);
 			ans.push_back(second);
-			FOE(x, adj[second]) {
+			for(auto& x : adj[second]) {
 				--in[x];
 				if(!in[x]) pq.push(x);
 			}
@@ -71,24 +37,25 @@ void solve() {
 		int u = pq.top();
 		pq.pop();
 		ans.push_back(u);
-		FOE(x, adj[u]) {
+		for(auto& x : adj[u]) {
 			--in[x];
 			if(!in[x]) pq.push(x);
 		}
 	}
-	if((int)ans.size()!=n) print("Never");
+	if((int)ans.size()!=n) cout << "Never\n";
 	else {
-		write(ch?"Different ":"Same ");
-		FOE(x, ans) write(x+1, " ");
-		print();
+		cout << (ch?"Different ":"Same ");
+		for(auto& x : ans) cout << x+1 << " ";
+		cout << "\n";
 	}
 	memset(in,0,sizeof(in));
-	fill_n(adj, n, vt<int>());
+	fill_n(adj, n, vector<int>());
 }
 int main() {
 	ios::sync_with_stdio(false), cin.tie(nullptr);
 	int t;
-	read(t);
-	while(t--) solve();
+	cin >> t;
+	while(t--) 
+		solve();
 	return 0;
 }
