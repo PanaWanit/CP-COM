@@ -6,7 +6,7 @@ int dp[mxN][mxN];
 int main() {
 	ios::sync_with_stdio(false), cin.tie(nullptr);
 	string a,b,ans="";
-	read(a, b);
+	cin >> a >> b;
 	int r=(int)a.size(), c=(int)b.size();
 	for(int i=1; i<=r; i++) {
 		for(int j=1; j<=c; j++) {
