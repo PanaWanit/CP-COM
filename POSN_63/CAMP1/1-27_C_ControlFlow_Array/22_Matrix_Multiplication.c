@@ -17,7 +17,7 @@ int main() {
 		for(int j=0; j<c; ++j)
 			scanf("%d", &b[i][j]);
 	if(m!=r) {
-		printf("Can't Muliply.\n");
+		printf("Can't Multiply.\n");
 		return 0;
 	}
 	for(int i=0; i<n; ++i) {

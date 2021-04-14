@@ -13,7 +13,7 @@ int main() {
 	int t;
 	scanf("%d", &t);
 	while(t--) {
-		int n,m,mx=0,ansi,ansj;
+		int n,m,mx=-1,ansi,ansj;
 		scanf("%d %d", &n, &m);
 		for(int i=0; i<n; ++i)
 			for(int j=0; j<m; ++j)
