@@ -1,10 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
-const int mxN = 6000;
-int a[mxN];
+int a[6000];
 void solve() {
 	a[mxN-1]=1;
-	int base, expo, tod=0;
+	int base, expo, tod=0,i;
 	cin >> base >> expo;
 	if(base==0) {
 		cout << 0 << "\n";
@@ -16,7 +15,6 @@ void solve() {
 			tod=a[i]/10, a[i]%=10;
 		}
 	}
-	int i;
 	for(i=0;!a[i]; ++i);
 	for(; i<mxN; ++i)
 		cout << a[i];

@@ -5,6 +5,7 @@
 /Web_Program
 /wc
 Ctemplate.c
+template.cpp
 *.ini
 *.out
 *.exe
