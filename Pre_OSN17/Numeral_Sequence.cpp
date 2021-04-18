@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using ll = long long;
 using namespace std;
-char num[50];
+char num[5000];
 int main() {
 	int t;
 	ll k;
