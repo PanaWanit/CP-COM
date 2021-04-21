@@ -2,7 +2,7 @@
 using namespace std;
 const int mxN = 1e5+10, range = 4e6+100, mxH = 1e6;
 int n, h[mxN];
-struct swl {
+struct swl { 
 	int h,o,idx;
 	bool operator < (const swl& o) const {
 		return idx<o.idx;
@@ -29,9 +29,12 @@ int main() {
 		int S,H,W,O;
 		cin >> S >> H >> W >> O;
 		swl[i] = {H, O, S};
-		swl[n+i] = {H, O, S+W-1};
+		swl[n+i] = {H, -O, S+W};
 	}
 	sort(swl, swl+n*2);
+	for(int i=0; i<2*n; ++i) {
+		f.upd(swl[i].h, swl[i].o);
+	}
 
 	return 0;
 }
