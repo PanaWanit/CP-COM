@@ -1,9 +1,9 @@
-/vsc
 /vmcpp
 /.vscode
-/HiwKao
 /Web_Program
 /wc
+/POSN_63/EX_CAMP
+/peat_teap
 Ctemplate.c
 template.cpp
 *.ini
@@ -20,4 +20,3 @@ template.cpp
 *.dylib
 *.dll
 .vscode
-
