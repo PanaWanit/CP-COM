@@ -3,7 +3,7 @@ using namespace std;
 
 #define ll long long
 #define ar array
-#define all(x) (x).begin(), (x).end()
+#define vt vector
 #define sz(x) (int)(x).size()
 
 int main() {
