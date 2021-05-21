@@ -4,11 +4,11 @@
 /wc
 /_Pre_OSN17
 /POSN_63/EX_CAMP
-/peat_teap
 /Algorithm
 Ctemplate.c
 template.cpp
 *.ini
+*.bak
 *.out
 *.exe
 *.d
