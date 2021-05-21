@@ -6,7 +6,7 @@ void solve() {
 	cin >> s >> p;
 	ll lb = 1 , rb = s/2+1;
 	while(lb < rb) {
-		ll mb = (lb+rb)/2;
+		ll mb = lb+(rb-lb)/2;
 		if(mb * (s-mb) == p) {
 			cout << mb << " " << s-mb << "\n";return;
 		}
@@ -17,6 +17,7 @@ void solve() {
 }
 int main() {
 	ios::sync_with_stdio(0),cin.tie(0);
+	cout << fixed << setprecision(0);
 	int t;
 	for(cin >> t; t--;) 
 		solve();

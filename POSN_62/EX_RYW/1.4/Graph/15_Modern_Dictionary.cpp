@@ -1,12 +1,11 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define vt vector
 #define FOE(x, a) for(auto& x: a)
 #define sz(x) (int)(x).size()
 const int mxN = 110, char_range ='z'-'a'+1;
 string a[mxN];
 int in[char_range];
-vt<int> adj[char_range];
+vector<int> adj[char_range];
 int main() {
 	ios::sync_with_stdio(false), cin.tie(nullptr);
 	int n;

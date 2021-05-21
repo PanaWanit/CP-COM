@@ -17,7 +17,7 @@ void solve() {
 		for(int i=1; i<n; i++) {
 			ll dif = a[i]-a[i-1]-1;
 			now += (mb+1)*(mb+1);
-			ll sz = max(0, mb-dif/2);
+			ll sz = max(0ll, mb-dif/2);
 			now -= sz*(sz+1-dif%2);
 		}
 		if(now >= k) rb=mb;
@@ -28,7 +28,7 @@ void solve() {
 int main() {
 	ios::sync_with_stdio(false), cin.tie(nullptr);
 	int q=1;
-	//cin >> q;
+	cin >> q;
 	while(q--)
 		solve();
 	return 0;
